@@ -80,7 +80,7 @@ app.use(errorMiddleware);
 
 // --- 4. START THE SERVER ---
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 [PRO] Server is running on port ${PORT}`);
   console.log(`🔗 Database: Neon (PostgreSQL) via Prisma`);
 });
