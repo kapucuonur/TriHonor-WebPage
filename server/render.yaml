@@ -2,10 +2,10 @@ services:
   - type: web
     name: trihonor-api
     runtime: node
-    buildCommand: npm install
+    buildCommand: npm install && npx prisma generate
     startCommand: npm start
     envVars:
-      - key: MONGODB_URI
+      - key: DATABASE_URL
         sync: false
       - key: GEMINI_API_KEY
         sync: false

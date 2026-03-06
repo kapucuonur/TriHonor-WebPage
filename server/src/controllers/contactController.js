@@ -1,5 +1,5 @@
 // server/src/controllers/contactController.js
-const ContactMessage = require('../models/ContactMessage');
+const prisma = require('../config/prisma');
 const nodemailer = require('nodemailer');
 
 // Create a transporter for sending emails
@@ -16,14 +16,15 @@ const transporter = nodemailer.createTransport({
 // @access  Public
 exports.submitMessage = async (req, res) => {
   try {
-    // The data from the form is in req.body
     const { name, email, message } = req.body;
 
-    // 1. Create a new message in the database
-    const newMessage = await ContactMessage.create({
-      name,
-      email,
-      message,
+    // 1. Create a new message in the Neon (Postgres) database using Prisma
+    const newMessage = await prisma.contactMessage.create({
+      data: {
+        name,
+        email,
+        message,
+      },
     });
 
     // 2. Send email notification if configured
@@ -46,14 +47,12 @@ exports.submitMessage = async (req, res) => {
       }
     }
 
-    // Send a success response back to the frontend
     res.status(201).json({
       success: true,
       message: 'Message sent successfully!',
       data: newMessage,
     });
   } catch (error) {
-    // If there's an error (e.g., validation fails), send an error response
     console.error('Error submitting message:', error);
     res.status(400).json({
       success: false,

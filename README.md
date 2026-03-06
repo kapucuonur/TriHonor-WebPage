@@ -15,7 +15,8 @@ TriHonor is a premium agency website showcasing specialized services in Web, Mob
 ## 🛠️ Tech Stack
 
 - **Frontend**: React (Vite), GSAP (Animations), Axios, React Router.
-- **Backend**: Node.js, Express, Mongoose.
+- **Backend**: Node.js, Express, Prisma (PostgreSQL).
+- **Database**: Neon (Serverless Postgres).
 - **AI**: Google Generative AI (Gemini 1.5 Flash).
 - **Styling**: Vanilla CSS with modern variables and glassmorphism effects.
 
@@ -24,7 +25,7 @@ TriHonor is a premium agency website showcasing specialized services in Web, Mob
 ### Prerequisites
 
 - Node.js (v18+)
-- MongoDB Atlas account (for contact form data)
+- Neon account (for PostgreSQL database)
 - Google Gemini API Key (for Chatbot)
 
 ### Installation
@@ -46,7 +47,7 @@ TriHonor is a premium agency website showcasing specialized services in Web, Mob
    Create a `.env` file in the `server` directory:
    ```env
    PORT=5000
-   MONGODB_URI=your_mongodb_uri
+   DATABASE_URL=your_neon_connection_string
    GEMINI_API_KEY=your_gemini_api_key
    ```
 
