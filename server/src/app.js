@@ -15,32 +15,40 @@ dotenv.config({ path: path.join(__dirname, '../.env') });
 const app = express();
 
 // --- 1. GLOBAL MIDDLEWARES ---
-app.use(loggerMiddleware); // Log every request
 
+// Debug CORS - Log outgoing origin for troubleshooting
 const allowedOrigins = [
   'http://localhost:5173',
   'https://trihonor.com',
   'https://www.trihonor.com'
 ];
 
-// Modern CORS configuration (Express 5 compatible)
 app.use(cors({
   origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
-    const isAllowed = allowedOrigins.indexOf(origin) !== -1 ||
+
+    const isAllowed = allowedOrigins.includes(origin) ||
       origin.endsWith('.vercel.app') ||
       origin.endsWith('.trihonor.com');
+
     if (isAllowed) {
       callback(null, true);
     } else {
-      console.log('CORS blocked for origin:', origin);
-      callback(new Error('By CORS: This origin is not allowed'));
+      console.log('❌ CORS Blocked Origin:', origin);
+      callback(null, false); // Don't throw error, just don't allow
     }
   },
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200
 }));
 
+// Explicitly handle all preflight requests
+app.options('*', cors());
+
+app.use(loggerMiddleware); // Log every request after CORS
 app.use(express.json());
 
 // --- 2. API ROUTES ---
@@ -50,7 +58,7 @@ const aiRoutes = require('./routes/aiRoutes');
 app.use('/api/contact', contactRoutes);
 app.use('/api/ai', aiRoutes);
 
-// Handle undefined routes - Path-less middleware is safest for Express 5
+// Handle undefined routes
 app.use((req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
