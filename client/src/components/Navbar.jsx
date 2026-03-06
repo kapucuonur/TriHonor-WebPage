@@ -34,7 +34,8 @@ function Navbar() {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          TriHonor
+          <img src="/logo.png" alt="TriHonor Logo" className="logo-img" />
+          <span>TriHonor</span>
         </NavLink>
 
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>

@@ -45,9 +45,20 @@ body.dark-mode .navbar.scrolled {
 }
 
 .navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 1.8rem;
   font-weight: bold;
   color: var(--text-light);
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  border-radius: 8px;
+  /* Optional, for a smoother look */
 }
 
 body.dark-mode .navbar-logo {
