@@ -2,11 +2,29 @@
 import React from 'react';
 import './ServicesSection.css'; // Import the new Bento styles
 import wearableTechImg from '../../assets/images/wearable-tech.png';
+import webDevImg from '../../assets/images/web-dev.png';
+import softwareSolutionsImg from '../../assets/images/software-solutions.png';
+import aiIntegrationImg from '../../assets/images/ai-integration.png';
 
 const servicesData = [
-  { icon: 'fas fa-code', title: 'Web Development', desc: 'End-to-end web solutions. From blazing fast marketing sites to complex web applications.' },
-  { icon: 'fas fa-layer-group', title: 'Software Solutions', desc: 'Custom software tailored to your workflows. Cross-platform, secure, and scalable.' },
-  { icon: 'fas fa-brain', title: 'AI Integration', desc: 'Smart automation and insights. We integrate LLMs and machine learning into your business.' },
+  {
+    icon: 'fas fa-code',
+    title: 'Web Development',
+    desc: 'End-to-end web solutions. From blazing fast marketing sites to complex web applications.',
+    image: webDevImg
+  },
+  {
+    icon: 'fas fa-layer-group',
+    title: 'Software Solutions',
+    desc: 'Custom software tailored to your workflows. Cross-platform, secure, and scalable.',
+    image: softwareSolutionsImg
+  },
+  {
+    icon: 'fas fa-brain',
+    title: 'AI Integration',
+    desc: 'Smart automation and insights. We integrate LLMs and machine learning into your business.',
+    image: aiIntegrationImg
+  },
   {
     icon: 'fas fa-mobile-alt',
     title: 'Apps & Wearable Tech',
