@@ -34,33 +34,16 @@ function HeroSection() {
         .from(buttonsRef.current, { opacity: 0, y: 20 }, '-=0.5')
         .from(imageRef.current, { opacity: 0, scale: 0.95, y: 40 }, '-=0.7');
 
-      // Add continuous 3D container float
+      // Add continuous floating / rolling effect to the image
       gsap.to(imageRef.current, {
         y: '+=15',
-        rotationX: 4,
-        rotationY: -4,
-        duration: 4,
+        rotationX: 2,
+        rotationY: -2,
+        duration: 3,
         ease: 'sine.inOut',
         repeat: -1,
         yoyo: true,
       });
-
-      // Add "Rolling Plastic" effect to the image itself (morphing, swaying, color shift)
-      const imgTarget = imageRef.current.querySelector('img');
-      if (imgTarget) {
-        gsap.to(imgTarget, {
-          rotationZ: 2,
-          skewX: 3,
-          skewY: 1,
-          scaleX: 1.03,
-          scaleY: 0.97,
-          filter: 'hue-rotate(15deg) brightness(1.15)',
-          duration: 3.5,
-          ease: 'sine.inOut',
-          repeat: -1,
-          yoyo: true,
-        });
-      }
 
       // Subtle background movement effect - now targeting a real div
       gsap.to(glowRef.current, {
