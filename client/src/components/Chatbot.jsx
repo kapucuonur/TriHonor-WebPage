@@ -32,7 +32,8 @@ const Chatbot = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL || 'https://trihonor-webpage.onrender.com/api'}/ai/chat`, {
+            const TARGET_URL = import.meta.env.PROD ? 'https://trihonor-webpage.onrender.com/api' : (import.meta.env.VITE_API_URL || 'http://localhost:5000/api');
+            const response = await axios.post(`${TARGET_URL}/ai/chat`, {
                 message: inputValue,
                 history: messages.map(m => ({
                     role: m.role === 'assistant' ? 'model' : 'user',
