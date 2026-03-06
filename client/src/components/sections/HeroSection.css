@@ -1,3 +1,4 @@
+/* Apple-Style Hero Section */
 .hero {
   position: relative;
   /* Further reduced height for a more compact "above the fold" view */
@@ -9,13 +10,13 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* Dark navy instead of pure black for more depth */
-  background-color: #050509;
+  /* Lighter base - deep indigo instead of near-black */
+  background-color: #0b0b24;
   color: #fff;
   text-align: center;
 }
 
-/* Professional Mesh Gradient Background */
+/* Professional Mesh Gradient Background - Lightened and Intensified */
 .hero::before {
   content: "";
   position: absolute;
@@ -24,12 +25,12 @@
   width: 100%;
   height: 100%;
   background:
-    /* Main bottom-right glow */
-    radial-gradient(circle at 80% 80%, rgba(66, 126, 245, 0.08) 0%, transparent 50%),
-    /* Main top-left glow */
-    radial-gradient(circle at 20% 20%, rgba(98, 0, 234, 0.05) 0%, transparent 40%),
-    /* Center focal glow */
-    radial-gradient(circle at 50% 30%, rgba(41, 151, 255, 0.12) 0%, rgba(5, 5, 10, 0.2) 60%, transparent 100%);
+    /* Main bottom-right glow (Blue) */
+    radial-gradient(circle at 80% 80%, rgba(41, 151, 255, 0.25) 0%, transparent 50%),
+    /* Main top-left glow (Purple) */
+    radial-gradient(circle at 20% 20%, rgba(157, 78, 221, 0.2) 0%, transparent 40%),
+    /* Center focal glow (White/Blue) */
+    radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.1) 0%, rgba(41, 151, 255, 0.15) 30%, transparent 70%);
   z-index: 1;
 }
 
@@ -76,6 +77,12 @@
   margin-bottom: 1rem;
 }
 
+.hero-content h1 span {
+  /* Spotlight effect for the title span */
+  color: #fff;
+  text-shadow: 0 0 30px rgba(41, 151, 255, 0.5);
+}
+
 .hero-content p {
   font-size: 1.25rem;
   /* Slightly smaller */
@@ -112,6 +119,8 @@
   justify-content: center;
   position: relative;
   margin-top: 1rem;
+  perspective: 1000px;
+  /* Enable 3D perspective */
 }
 
 .hero-image-container img {
@@ -119,9 +128,11 @@
   height: auto;
   border-radius: 20px;
   /* Soft Apple-like shadow/glow */
-  box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5), 0 0 50px rgba(66, 126, 245, 0.15);
+  box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5), 0 0 50px rgba(66, 126, 245, 0.2);
   mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  transition: transform 0.3s ease-out;
+  /* Smooth transition for GSAP */
 }
 
 /* Responsive */

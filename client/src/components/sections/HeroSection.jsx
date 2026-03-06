@@ -26,12 +26,32 @@ function HeroSection() {
         defaults: { ease: 'power3.out', duration: 1 }
       });
 
-      // Add animations to the timeline
+      // Add entrance animations
       timeline
         .from(titleRef.current, { opacity: 0, y: 50 })
         .from(paragraphRef.current, { opacity: 0, y: 30 }, '-=0.5')
         .from(buttonsRef.current, { opacity: 0, y: 20 }, '-=0.5')
         .from(imageRef.current, { opacity: 0, scale: 0.95, y: 40 }, '-=0.7');
+
+      // Add continuous floating / rolling effect to the image
+      gsap.to(imageRef.current, {
+        y: '+=15',
+        rotationX: 2,
+        rotationY: -2,
+        duration: 3,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+      });
+
+      // Subtle background movement effect
+      gsap.to('.hero::before', {
+        backgroundPosition: '10% 10%',
+        duration: 20,
+        ease: 'none',
+        repeat: -1,
+        yoyo: true
+      });
 
     }, componentRef);
 
