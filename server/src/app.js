@@ -40,7 +40,8 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-app.options('*', cors());
+// Express 5 requires (.*) instead of * for wildcards
+app.options('(.*)', cors());
 app.use(express.json());
 
 // --- 2. API ROUTES ---
@@ -50,8 +51,8 @@ const aiRoutes = require('./routes/aiRoutes');
 app.use('/api/contact', contactRoutes);
 app.use('/api/ai', aiRoutes);
 
-// Handle undefined routes
-app.all('*', (req, res, next) => {
+// Handle undefined routes - Express 5 compatible syntax
+app.all('(.*)', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
