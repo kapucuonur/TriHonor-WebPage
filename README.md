@@ -7,21 +7,22 @@ TriHonor is a premium agency website showcasing specialized services in Web, Mob
 ## 🌐 Live Demo
 Visit the professional live site at: **[trihonor.com](https://trihonor.com)**
 
+---
+
 ## 🚀 Key Features
 
-- **AI Chatbot**: Real-time business assistant powered by **Google Gemini 1.5 Flash**.
+- **AI Chatbot**: Real-time business assistant powered by **Google Gemini 1.5 Flash** with custom CORS handling.
 - **Pro Backend Architecture**: Enterprise-grade structure featuring:
-    - Global Error Handling Middleware.
-    - Automated `catchAsync` wrappers for controllers.
-    - Real-time Request Logging and performance monitoring.
+    - Manual Preflight CORS handling for absolute domain security.
+    - Global Error Handling Middleware & `catchAsync` wrappers.
     - Custom `AppError` operational error classes.
 - **Neon Migration**: High-performance Serverless PostgreSQL integration via **Prisma ORM**.
 - **Premium UI/UX**: 
-    - Modern "Glassmorphism" design system.
-    - Smooth scroll animations using **GSAP**.
-    - Optimized 2x2 Services Grid for high visual balance.
-    - Floating **Scroll-to-Top** navigation for enhanced UX.
-- **Branding**: Custom-designed **Apex Unity** geometric logo for a cohesive digital identity.
+    - **Balanced Bento Grid**: Symmetrical 2x2 Services layout with custom 3D imagery.
+    - **Vibrant Hero**: Motion-designed hero section with floating 3D assets and mesh gradients.
+    - **Legal Compliance**: Dedicated, professionally styled **Privacy Policy** and **Terms of Service** pages.
+    - **Enhanced Navigation**: Floating Scroll-to-Top button with high visibility in Dark Mode.
+- **Branding**: Custom-designed **Apex Unity** branding for a cohesive digital identity.
 
 ## 🛠️ Tech Stack
 
@@ -29,7 +30,7 @@ Visit the professional live site at: **[trihonor.com](https://trihonor.com)**
 - **Backend**: Node.js (Express 5), Prisma ORM.
 - **Database**: Neon (PostgreSQL).
 - **AI**: Google Generative AI SDK.
-- **DevOps**: GitHub Actions (CI/CD), Vercel (Frontend), Render (Backend).
+- **DevOps**: GitHub Actions, Vercel (Frontend), Render (Backend).
 
 ## 📦 Getting Started
 
@@ -78,15 +79,19 @@ Visit the professional live site at: **[trihonor.com](https://trihonor.com)**
 ```text
 server/
 ├── src/
-│   ├── components/     # Express routes
+│   ├── routes/         # Express routes
 │   ├── controllers/    # Business logic (catchAsync enabled)
 │   ├── middleware/     # Global Error & Logger
 │   ├── utils/          # AppError classes
-│   └── app.js          # Express 5 entry point
+│   └── app.js          # Express 5 entry point with manual preflight
 ```
 
-## 📄 License
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+## 📄 License & Corporate
+This project is licensed under the ISC License.
+
+**Corporate Information:**
+- **Location:** Tampere, Finland
+- **Y-tunnus:** 3131622-7
 
 ---
-Developed with 💎 by **TriHonor Team** | [trihonor.com](https://trihonor.com)
+Developed with 💎 by **Onur Kapucu** | [LinkedIn](https://www.linkedin.com/in/onur-kapucu/) | [GitHub](https://github.com/kapucuonur/)
