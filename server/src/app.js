@@ -16,16 +16,15 @@ const app = express();
 
 // --- 1. GLOBAL MIDDLEWARES ---
 
-// Debug CORS - Log outgoing origin for troubleshooting
 const allowedOrigins = [
   'http://localhost:5173',
   'https://trihonor.com',
   'https://www.trihonor.com'
 ];
 
+// Modern CORS configuration (Express 5 compatible)
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
 
     const isAllowed = allowedOrigins.includes(origin) ||
@@ -36,7 +35,7 @@ app.use(cors({
       callback(null, true);
     } else {
       console.log('❌ CORS Blocked Origin:', origin);
-      callback(null, false); // Don't throw error, just don't allow
+      callback(null, false);
     }
   },
   credentials: true,
@@ -45,10 +44,10 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-// Explicitly handle all preflight requests
-app.options('*', cors());
+// Express 5 requires (.*) instead of *
+app.options('(.*)', cors());
 
-app.use(loggerMiddleware); // Log every request after CORS
+app.use(loggerMiddleware);
 app.use(express.json());
 
 // --- 2. API ROUTES ---
@@ -58,7 +57,7 @@ const aiRoutes = require('./routes/aiRoutes');
 app.use('/api/contact', contactRoutes);
 app.use('/api/ai', aiRoutes);
 
-// Handle undefined routes
+// Handle undefined routes - Path-less middleware is safest 
 app.use((req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
