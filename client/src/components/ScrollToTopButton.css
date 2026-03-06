@@ -2,8 +2,8 @@
     position: fixed;
     bottom: 2rem;
     left: 2rem;
-    /* Opposite of chatbot */
-    z-index: 998;
+    /* High z-index to be above everything but navbar */
+    z-index: 2500;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
