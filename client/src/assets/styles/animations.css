@@ -1,0 +1,22 @@
+/* --- src/assets/styles/animations.css --- */
+
+/* Initial states (element is hidden) */
+.fade-in,
+.slide-up,
+.slide-left,
+.slide-right,
+.scale-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up { transform: translateY(50px); }
+.slide-left { transform: translateX(-50px); }
+.slide-right { transform: translateX(50px); }
+.scale-in { transform: scale(0.9); }
+
+/* Final state (when 'animated' class is added) */
+.animated {
+  opacity: 1;
+  transform: none;
+}

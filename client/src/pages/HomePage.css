@@ -1,0 +1,111 @@
+/* --- src/pages/HomePage.css --- */
+
+/* Wrapper for proper Stacking Context */
+.homepage-wrapper {
+  overflow-x: hidden;
+  background-color: var(--bg-white);
+}
+
+body.dark-mode .homepage-wrapper {
+  background-color: #000;
+}
+
+/* Base Section Style */
+.home-section {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Alternating Backgrounds (Apple Style) --- */
+
+/* Hero: Deepest Black */
+.hero-wrapper {
+  background-color: transparent;
+  /* Hero handles its own bg/image */
+}
+
+/* Services: Off-Black / Dark Grey */
+.services-wrapper {
+  background-color: #F5F5F7;
+}
+
+body.dark-mode .services-wrapper {
+  background-color: #0d0d0d;
+  /* Very subtle separation from pure black */
+}
+
+/* Expertise: Pure Black */
+.expertise-wrapper {
+  background-color: #FFFFFF;
+}
+
+body.dark-mode .expertise-wrapper {
+  background-color: #000000;
+}
+
+/* Portfolio: Deep Grey */
+.portfolio-wrapper {
+  background-color: #F5F5F7;
+}
+
+body.dark-mode .portfolio-wrapper {
+  background-color: #111111;
+}
+
+/* Testimonials: Pure Black */
+.testimonials-wrapper {
+  background-color: #FFFFFF;
+}
+
+body.dark-mode .testimonials-wrapper {
+  background-color: #000000;
+}
+
+/* About: Dark Grey Footer Feel */
+.about-wrapper {
+  background-color: #F5F5F7;
+}
+
+body.dark-mode .about-wrapper {
+  background-color: #0d0d0d;
+}
+
+/* Contact: Pure Black/White for Contrast */
+.contact-wrapper {
+  background-color: #FFFFFF;
+}
+
+body.dark-mode .contact-wrapper {
+  background-color: #000000;
+}
+
+
+/* Existing Styles overridden where necessary by wrappers, but ensuring inner spacing */
+.services,
+.expertise,
+.portfolio,
+.testimonials,
+.contact {
+  padding: 5rem 0;
+  /* Use transparent here so wrapper bg shows through */
+  background-color: transparent !important;
+}
+
+/* Clear existing background colors on components to let wrapper shine */
+.expertise {
+  background-color: transparent;
+}
+
+body.dark-mode .expertise {
+  background-color: transparent;
+}
+
+/* Grid Styles remain */
+.services-grid,
+.expertise-grid,
+.portfolio-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

@@ -1,0 +1,93 @@
+/* client/src/components/sections/CompactSections.css */
+
+/* Compact About: Minimalist Text Block */
+.compact-about-section {
+    padding: 100px 5%;
+    background-color: var(--bg-white);
+    text-align: center;
+}
+
+body.dark-mode .compact-about-section {
+    background-color: #000;
+}
+
+.compact-about-section h2 {
+    font-size: 3.5rem;
+    /* Large impact text */
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.compact-about-section p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.5;
+}
+
+/* Compact Contact: High Impact CTA */
+.compact-contact-section {
+    padding: 120px 5%;
+    background-color: #F5F5F7;
+    /* Apple Off-White */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+body.dark-mode .compact-contact-section {
+    background-color: #111;
+}
+
+.cta-container {
+    text-align: center;
+    max-width: 800px;
+}
+
+.cta-container h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #0071e3 0%, #00c6ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-text {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+/* Large Rounded Button */
+.btn-large {
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 980px;
+    /* Fully rounded pill */
+    text-decoration: none;
+    background-color: #0071e3 !important;
+    /* Force Apple Blue */
+    color: #ffffff !important;
+    /* Force White Text */
+    border: none;
+    transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.2s ease;
+}
+
+.btn-large:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+    .compact-about-section h2,
+    .cta-container h2 {
+        font-size: 2.5rem;
+    }
+}

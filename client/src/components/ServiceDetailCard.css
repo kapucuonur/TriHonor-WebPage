@@ -1,0 +1,18 @@
+/* --- src/components/ServiceDetailCard.css --- */
+.service-detail-card {
+  background: var(--card-light); border: 1px solid var(--border-light);
+  border-radius: 8px; padding: 1.5rem;
+}
+body.dark-mode .service-detail-card {
+  background: var(--card-dark); border-color: var(--border-dark);
+}
+.service-features {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.service-detail-card.is-expanded .service-features {
+  max-height: 500px; /* Should be larger than content */
+  margin-top: 1.5rem;
+  opacity: 1;
+}

@@ -1,0 +1,196 @@
+/* client/src/pages/ServicesPage.css */
+
+.services-page {
+  background-color: var(--bg-white);
+  min-height: 100vh;
+}
+
+body.dark-mode .services-page {
+  background-color: #000;
+}
+
+.services-page .services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 5% 100px 5%;
+  /* Clear navbar */
+}
+
+/* Page Header */
+.services-page .page-title {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #000 0%, #333 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+body.dark-mode .services-page .page-title {
+  background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.services-page .page-subtitle {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+/* Services Grid (Bento Style) */
+.services-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 6rem;
+}
+
+/* Card Styling (Reuse styling logic but specific to this page if needed, or global) */
+.services-detail-grid .service-card {
+  background: #F5F5F7;
+  border-radius: 30px;
+  /* Large Apple curvature */
+  padding: 40px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-mode .services-detail-grid .service-card {
+  background: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.services-detail-grid .service-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .services-detail-grid .service-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.service-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #0071E3, #00C7FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+}
+
+.service-card h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-learn-more {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--btn-primary);
+  font-size: 1.1rem;
+}
+
+.service-learn-more i {
+  margin-left: 8px;
+  transition: transform 0.2s;
+}
+
+.service-learn-more:hover i {
+  transform: translateX(4px);
+}
+
+/* Process Section */
+.process-section {
+  text-align: center;
+  margin-top: 8rem;
+  padding: 0 1rem;
+}
+
+.process-section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.process-step-item {
+  position: relative;
+  text-align: center;
+}
+
+.step-number {
+  font-size: 4rem;
+  font-weight: 800;
+  opacity: 0.1;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  color: var(--text-primary);
+}
+
+.step-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .step-content {
+  background: rgba(28, 28, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.step-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.step-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}

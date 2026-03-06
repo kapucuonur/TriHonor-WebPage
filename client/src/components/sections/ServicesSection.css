@@ -1,0 +1,123 @@
+/* client/src/components/sections/ServicesSection.css */
+
+.services {
+    padding: 100px 5%;
+    background-color: var(--bg-white);
+}
+
+.services .section-header {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.services .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.services .section-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* If we want specific spanning for a true "Bento" look, 
+   we can target children if we passed IDs or classes. 
+   For now, a clean flexible grid works well for 3 items. 
+   To make it "Bento-ish", we style the cards heavily. */
+
+.bento-card {
+    background-color: var(--bg-light);
+    border-radius: 24px;
+    /* Large Apple-like radius */
+    padding: 40px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    /* Very subtle border */
+    overflow: hidden;
+}
+
+.bento-card.has-image {
+    padding: 0;
+}
+
+.bento-card.has-image .card-content {
+    padding: 40px;
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.bento-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.bento-card:hover {
+    transform: scale(1.02);
+    /* Subtle lift */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    /* Lighten on hover */
+}
+
+.bento-icon {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    color: var(--btn-primary);
+    background: linear-gradient(135deg, var(--btn-primary) 0%, #00C6FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bento-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.bento-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .services {
+    background-color: #000;
+}
+
+body.dark-mode .bento-card {
+    background-color: var(--bg-white);
+    /* Dark card bg */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .bento-card:hover {
+    background-color: #2C2C2E;
+}

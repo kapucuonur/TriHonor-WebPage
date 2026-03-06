@@ -1,0 +1,33 @@
+/* client/src/components/DarkModeToggle.css */
+.dark-mode-toggle {
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-bg, #fff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-primary, #333);
+    transition: all 0.3s ease;
+    border: none;
+    margin-left: 1rem;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode .dark-mode-toggle {
+    background-color: #333;
+    color: #ffc107;
+    /* Yellowish for sun/moon */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}

@@ -1,0 +1,12 @@
+/* --- src/pages/ContactPage.css --- */
+.contact-page .container { padding-top: 5rem; padding-bottom: 5rem; }
+.contact-container {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 3rem; align-items: flex-start; margin-bottom: 4rem;
+}
+.map-container { margin-top: 4rem; text-align: center; }
+.map-container h2 { margin-bottom: 2rem; }
+.map-container iframe { border-radius: 8px; }
+@media (max-width: 992px) {
+  .contact-container { grid-template-columns: 1fr; }
+}

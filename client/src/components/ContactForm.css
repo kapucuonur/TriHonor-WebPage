@@ -1,0 +1,15 @@
+/* --- src/components/ContactForm.css --- */
+.contact-form { max-width: 600px; margin: 1rem auto; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group textarea {
+  width: 100%; padding: 0.75rem; border: 1px solid var(--border-light);
+  border-radius: 4px; font-size: 1rem; background-color: white;
+}
+body.dark-mode .form-group input, body.dark-mode .form-group textarea {
+  background-color: var(--card-dark); border-color: var(--border-dark); color: var(--text-dark);
+}
+.form-group input.invalid, .form-group textarea.invalid { border-color: #dc3545; }
+.error-text { color: #dc3545; font-size: 0.875rem; margin-top: 0.25rem; }
+.success-message { color: #28a745; text-align: center; margin-top: 1rem; }
+.contact-form button[type="submit"] { width: 100%; }

@@ -1,0 +1,72 @@
+/* client/src/components/InfoCard.css */
+
+.info-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg, #fff);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.dark-mode .info-card {
+    --card-bg: var(--card-dark);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-card-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-light, #e6f0ff);
+    color: var(--primary-color, #007bff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-right: 1.5rem;
+}
+
+.dark-mode .info-card-icon {
+    background-color: rgba(var(--primary-rgb), 0.15);
+}
+
+.info-card-content {
+    flex-grow: 1;
+}
+
+.info-card-content h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary, #6c757d);
+}
+
+.info-card-content p,
+.info-card-content a {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary, #212529);
+    text-decoration: none;
+}
+
+.info-card-content a:hover {
+    color: var(--primary-color, #007bff);
+    text-decoration: underline;
+}
+
+.dark-mode .info-card-content p,
+.dark-mode .info-card-content a {
+    color: var(--text-dark, #f8f9fa);
+}
