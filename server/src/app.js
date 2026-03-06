@@ -13,14 +13,30 @@ dotenv.config({ path: path.join(__dirname, '../.env') });
 const app = express();
 
 // --- Middlewares ---
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://trihonor.com',
+  'https://www.trihonor.com',
+];
+
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://trihonor.com',
-    'https://www.trihonor.com',
-    /\.vercel\.app$/
-  ],
-  credentials: true
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+
+    const isAllowed = allowedOrigins.includes(origin) ||
+      origin.endsWith('.vercel.app') ||
+      origin.endsWith('.trihonor.com');
+
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(new Error('By CORS: This origin is not allowed'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
