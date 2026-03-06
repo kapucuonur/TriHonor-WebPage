@@ -17,7 +17,12 @@ const app = express();
 // Enable Cross-Origin Resource Sharing (CORS)
 // This allows your frontend at localhost:5173 to talk to your backend at localhost:5000
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://trihonor.com', 'https://www.trihonor.com'],
+  origin: [
+    'http://localhost:5173',
+    'https://trihonor.com',
+    'https://www.trihonor.com',
+    /\.vercel\.app$/ // This allows all Vercel preview/production links
+  ],
   credentials: true
 }));
 
