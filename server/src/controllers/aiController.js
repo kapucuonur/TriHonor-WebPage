@@ -26,9 +26,15 @@ exports.chatWithGemini = catchAsync(async (req, res, next) => {
         });
     }
 
+    // Validate and sanitize history: Gemini strictly requires the first message to be from the 'user'
+    let validHistory = Array.isArray(history) ? [...history] : [];
+    while (validHistory.length > 0 && validHistory[0].role !== 'user') {
+        validHistory.shift();
+    }
+
     // Start a chat session
     const chatSession = model.startChat({
-        history: history || [],
+        history: validHistory,
         generationConfig: {
             maxOutputTokens: 500,
         },
