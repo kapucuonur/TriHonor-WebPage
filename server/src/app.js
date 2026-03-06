@@ -44,8 +44,8 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-// Express 5 requires (.*) instead of *
-app.options('(.*)', cors());
+// Use a regular expression for catch-all to bypass problematic path-to-regexp strings in Express 5
+app.options(/.*/, cors());
 
 app.use(loggerMiddleware);
 app.use(express.json());
