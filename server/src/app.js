@@ -23,6 +23,7 @@ const allowedOrigins = [
   'https://www.trihonor.com'
 ];
 
+// Modern CORS configuration (Express 5 compatible)
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin) return callback(null, true);
@@ -40,8 +41,6 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-// Express 5 requires (.*) instead of * for wildcards
-app.options('(.*)', cors());
 app.use(express.json());
 
 // --- 2. API ROUTES ---
@@ -51,8 +50,8 @@ const aiRoutes = require('./routes/aiRoutes');
 app.use('/api/contact', contactRoutes);
 app.use('/api/ai', aiRoutes);
 
-// Handle undefined routes - Express 5 compatible syntax
-app.all('(.*)', (req, res, next) => {
+// Handle undefined routes - Path-less middleware is safest for Express 5
+app.use((req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
