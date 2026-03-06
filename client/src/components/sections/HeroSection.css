@@ -1,11 +1,11 @@
 /* Apple-Style Hero Section */
 .hero {
   position: relative;
-  /* Reduced height for better initial view */
-  min-height: 80vh;
-  padding-top: 100px;
+  /* Further reduced height for a more compact "above the fold" view */
+  min-height: 70vh;
+  padding-top: 80px;
   /* Space for navbar */
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 1.5rem;
+  /* Reduced gap */
   max-width: 1100px;
   /* Wider container for the image */
   margin: 0 auto;
@@ -43,22 +44,25 @@
 
 /* Typography */
 .hero-content h1 {
-  font-size: 5rem;
-  line-height: 1.05;
+  font-size: 3.5rem;
+  /* Reduced from 5rem */
+  line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #FFFFFF 0%, #A1A1A6 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  /* Slightly smaller */
   color: #A1A1A6;
   max-width: 600px;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 auto 1.5rem auto;
+  /* Reduced margin */
   font-weight: 400;
 }
 
