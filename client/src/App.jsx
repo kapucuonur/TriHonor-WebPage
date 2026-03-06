@@ -9,6 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 // Page Components
 import HomePage from './pages/HomePage';
@@ -43,6 +44,7 @@ function App() {
       {/* This replaces your static <footer class="footer">...</footer> */}
       <Footer />
       <Chatbot />
+      <ScrollToTopButton />
     </>
   );
 }
