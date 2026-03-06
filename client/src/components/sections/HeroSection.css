@@ -1,4 +1,3 @@
-/* Apple-Style Hero Section */
 .hero {
   position: relative;
   /* Further reduced height for a more compact "above the fold" view */
@@ -17,13 +16,13 @@
 }
 
 /* Professional Mesh Gradient Background - Lightened and Intensified */
-.hero::before {
+.hero-glow {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
   background:
     /* Main bottom-right glow (Blue) */
     radial-gradient(circle at 80% 80%, rgba(41, 151, 255, 0.25) 0%, transparent 50%),
@@ -32,6 +31,7 @@
     /* Center focal glow (White/Blue) */
     radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.1) 0%, rgba(41, 151, 255, 0.15) 30%, transparent 70%);
   z-index: 1;
+  pointer-events: none;
 }
 
 /* Fine-grained texture overlay for premium feel */

@@ -15,7 +15,7 @@ const footerLinks = {
     { name: 'Testimonials', path: '/about' },
   ],
   resources: [
-    { name: 'Blog', path: '/blog' }, // Example for a future page
+    { name: 'Blog', path: '/blog' },
     { name: 'Case Studies', path: '/portfolio' },
     { name: 'Support', path: '/contact' },
   ]
@@ -34,9 +34,13 @@ function Footer() {
               <span>TriHonor</span>
             </Link>
             <p>Professional fullstack web, software and AI development services to transform your business.</p>
+            <p className="footer-company-info" style={{ color: '#A1A1A6', margin: '15px 0', fontSize: '0.9rem', lineHeight: '1.6' }}>
+              Tampere, Finland <br />
+              Y-tunnus: 3131622-7
+            </p>
             <div className="social-links">
-              <a href="#" aria-label="GitHub"><i className="fab fa-github"></i></a>
-              <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+              <a href="https://github.com/kapucuonur/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i className="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/onur-kapucu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
               <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
             </div>
           </div>

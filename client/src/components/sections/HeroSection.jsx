@@ -18,6 +18,7 @@ function HeroSection() {
   const paragraphRef = useRef();
   const buttonsRef = useRef();
   const imageRef = useRef();
+  const glowRef = useRef();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -44,9 +45,10 @@ function HeroSection() {
         yoyo: true,
       });
 
-      // Subtle background movement effect
-      gsap.to('.hero::before', {
-        backgroundPosition: '10% 10%',
+      // Subtle background movement effect - now targeting a real div
+      gsap.to(glowRef.current, {
+        x: '+=20',
+        y: '+=20',
         duration: 20,
         ease: 'none',
         repeat: -1,
@@ -60,6 +62,9 @@ function HeroSection() {
 
   return (
     <section className="hero" ref={componentRef}>
+      {/* Real div for background glow instead of pseudo-element for GSAP compatibility */}
+      <div className="hero-glow" ref={glowRef}></div>
+
       <div className="container">
         <div className="hero-content">
           <h1 ref={titleRef}>Transforming Ideas into <br /><span>Digital Excellence.</span></h1>

@@ -14,19 +14,39 @@ dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const app = express();
 
-// --- 1. GLOBAL MIDDLEWARES ---
+// --- 1. GLOBAL MIDDLEWARES & CORS ---
 
 const allowedOrigins = [
   'http://localhost:5173',
   'https://trihonor.com',
-  'https://www.trihonor.com'
+  'https://www.trihonor.com',
+  'https://trihonor-web-page.vercel.app'
 ];
 
-// Modern CORS configuration (Express 5 compatible)
+// BULLETPROOF CORS & PREFLIGHT HANDLING
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+
+  if (origin && (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app') || origin.endsWith('.trihonor.com'))) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  // Handle Preflight directly
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
+
+// Also keep the official cors middleware as a second layer
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin) return callback(null, true);
-
     const isAllowed = allowedOrigins.includes(origin) ||
       origin.endsWith('.vercel.app') ||
       origin.endsWith('.trihonor.com');
@@ -34,18 +54,11 @@ app.use(cors({
     if (isAllowed) {
       callback(null, true);
     } else {
-      console.log('❌ CORS Blocked Origin:', origin);
       callback(null, false);
     }
   },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 200
+  credentials: true
 }));
-
-// Use a regular expression for catch-all to bypass problematic path-to-regexp strings in Express 5
-app.options(/.*/, cors());
 
 app.use(loggerMiddleware);
 app.use(express.json());
@@ -57,7 +70,7 @@ const aiRoutes = require('./routes/aiRoutes');
 app.use('/api/contact', contactRoutes);
 app.use('/api/ai', aiRoutes);
 
-// Handle undefined routes - Path-less middleware is safest 
+// Handle undefined routes
 app.use((req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });

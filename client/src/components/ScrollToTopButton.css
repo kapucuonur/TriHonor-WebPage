@@ -20,25 +20,37 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* Stronger border and background for visibility */
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    background: rgba(15, 15, 35, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: #fff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: all 0.3s ease;
+    /* Stronger shadow */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(41, 151, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-button i {
+    font-size: 1.2rem;
 }
 
 .scroll-button:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.1);
-    box-shadow: 0 8px 32px 0 rgba(41, 151, 255, 0.2);
-    color: #2997ff;
-    border-color: rgba(41, 151, 255, 0.3);
+    background: rgba(41, 151, 255, 0.2);
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 15px 50px rgba(41, 151, 255, 0.4);
+    color: #fff;
+    border-color: #2997ff;
+}
+
+/* Specific visibility fix for dark mode */
+body.dark-mode .scroll-button {
+    background: rgba(40, 40, 60, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 768px) {
