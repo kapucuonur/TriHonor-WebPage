@@ -34,16 +34,8 @@ function HeroSection() {
         .from(buttonsRef.current, { opacity: 0, y: 20 }, '-=0.5')
         .from(imageRef.current, { opacity: 0, scale: 0.95, y: 40 }, '-=0.7');
 
-      // Add continuous floating / rolling effect to the image
-      gsap.to(imageRef.current, {
-        y: '+=15',
-        rotationX: 2,
-        rotationY: -2,
-        duration: 3,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true,
-      });
+      // Image is now stable - continuous floating / rolling effect removed to fix scroll performance bugs
+
 
       // Subtle background movement effect - now targeting a real div
       gsap.to(glowRef.current, {
