@@ -33,7 +33,7 @@ exports.submitMessage = catchAsync(async (req, res, next) => {
     try {
       const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: process.env.CONTACT_EMAIL || 'trihonor@hotmail.com',
+        to: process.env.CONTACT_EMAIL || 'info@trihonor.com',
         subject: `New Contact Submission: ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
         html: `<h3>New Contact Message</h3>

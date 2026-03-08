@@ -7,7 +7,8 @@ import './ContactPage.css';
 // --- Data Layer ---
 // Keep data separate from the presentation for easy updates.
 const contactDetails = [
-  { icon: 'fas fa-envelope', title: 'Email', text: 'trihonor@hotmail.com' },
+  { icon: 'fas fa-envelope', title: 'Email (Onur)', text: 'onur@trihonor.com' },
+  { icon: 'fas fa-envelope', title: 'Email (Info)', text: 'info@trihonor.com' },
   { icon: 'fas fa-phone', title: 'Phone', text: '+358 442359429' },
   { icon: 'fas fa-map-marker-alt', title: 'Location', text: 'FINLAND, Tampere 33580' },
   { icon: 'fas fa-clock', title: 'Hours', text: 'Monday-Friday: 9am-5pm EET' },
