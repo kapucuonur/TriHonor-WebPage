@@ -8,9 +8,7 @@ import './AboutPage.css'; // We will create this CSS file next
 // It's a best practice to keep your data separate from your JSX.
 // This makes it easy to add/remove team members or values later.
 const teamData = [
-  { imgSrc: 'https://randomuser.me/api/portraits/men/42.jpg', name: 'John Smith', title: 'Lead Developer' },
-  { imgSrc: 'https://randomuser.me/api/portraits/women/63.jpg', name: 'Sarah Johnson', title: 'AI Specialist' },
-  { imgSrc: 'https://randomuser.me/api/portraits/men/75.jpg', name: 'Michael Chen', title: 'UX Designer' },
+  { imgSrc: 'https://github.com/kapucuonur.png', name: 'Onur Kapucu', title: 'Founder & Full Stack Developer' },
 ];
 
 const valuesData = [
@@ -31,7 +29,8 @@ function AboutPage() {
         <div className="about-content">
           <div className="about-story">
             <h2>Our Story</h2>
-            <p>Founded in 2015, TriHonor began as a small team of passionate developers with a vision to create exceptional digital experiences. Today, we've grown into a full-service development agency serving clients worldwide.</p>
+            <p>Founded in 2022, TriHonor began as an IT service with a vision to create exceptional digital experiences. What started as a solo endeavor by Onur Kapucu has grown into a comprehensive development agency delivering intuitive web, software, and AI solutions.</p>
+            <p>With a background spanning both sports coaching and software engineering, Onur brings a unique perspective to problem-solving. He leverages his discipline and analytical mindset to build high-performance applications tailored to clients' needs, from fitness tech integrations to full-fledged business dashboards.</p>
             <p>Our name represents the three core values we honor in every project: Technical Excellence, Reliable Partnerships, and Innovative Solutions.</p>
           </div>
 
