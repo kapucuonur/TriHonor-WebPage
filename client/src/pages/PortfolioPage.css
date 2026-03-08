@@ -82,8 +82,8 @@ body.dark-mode .filter-button:hover {
 }
 
 .filter-button.active {
-  background-color: var(--btn-primary) !important;
-  color: white !important;
+  background: #0071E3 !important;
+  color: #ffffff !important;
   box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
 }
 
