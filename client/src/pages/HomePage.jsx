@@ -35,7 +35,7 @@ function HomePage() {
             scrollTrigger: {
               trigger: section,
               start: 'top 85%', // Starts animation when top of section hits 85% of viewport height
-              toggleActions: 'play none none reverse' // Play on enter, reverse on leave back up
+              once: true // Play only once to prevent layout thrashing and scroll lag
             }
           }
         );

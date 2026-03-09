@@ -36,10 +36,10 @@ const PrivacyPolicyPage = () => {
                     <p>We do not sell, trade, or otherwise transfer your personal identification information to outside parties, except for trusted third parties who assist us in operating our website or conducting our business, so long as those parties agree to keep this information confidential.</p>
 
                     <h2>5. Your Rights</h2>
-                    <p>You have the right to access, correct, or delete your personal information. If you wish to exercise these rights, please contact us at support@trihonor.com.</p>
+                    <p>You have the right to access, correct, or delete your personal information. If you wish to exercise these rights, please contact us at info@trihonor.com.</p>
 
                     <h2>6. Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy, please contact us via our contact form or at support@trihonor.com.</p>
+                    <p>If you have any questions about this Privacy Policy, please contact us via our contact form or at info@trihonor.com.</p>
                 </div>
             </div>
         </div>

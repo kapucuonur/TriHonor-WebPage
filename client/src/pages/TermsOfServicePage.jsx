@@ -39,7 +39,7 @@ const TermsOfServicePage = () => {
                     <p>TriHonor reserves the right to update or change these Terms of Service at any time. Your continued use of the website following any changes signifies your acceptance of the new terms.</p>
 
                     <h2>8. Contact Information</h2>
-                    <p>If you have any questions about these Terms of Service, please contact us at support@trihonor.com.</p>
+                    <p>If you have any questions about these Terms of Service, please contact us at info@trihonor.com.</p>
                 </div>
             </div>
         </div>

@@ -22,12 +22,12 @@ function AboutPage() {
     <section className="about-page">
       <div className="container">
         <div className="about-header">
-          <h1 className="page-title">About TriHonor</h1>
-          <p className="page-subtitle">Professional fullstack development and AI solutions</p>
+          <h1 className="page-title animate__animated animate__fadeInDown">About TriHonor</h1>
+          <p className="page-subtitle animate__animated animate__fadeInUp">Professional fullstack development and AI solutions</p>
         </div>
 
         <div className="about-content">
-          <div className="about-story">
+          <div className="about-story animate__animated animate__fadeInUp" style={{ animationDelay: '0.2s' }}>
             <h2>Our Story</h2>
             <p>Founded in 2022, TriHonor began as an IT service with a vision to create exceptional digital experiences. What started as a solo endeavor by Onur Kapucu has grown into a comprehensive development agency delivering intuitive web, software, and AI solutions.</p>
             <p>With a background spanning both sports coaching and software engineering, Onur brings a unique perspective to problem-solving. He leverages his discipline and analytical mindset to build high-performance applications tailored to clients' needs, from fitness tech integrations to full-fledged business dashboards.</p>
@@ -35,36 +35,39 @@ function AboutPage() {
           </div>
 
           <div className="team-section">
-            <h2>Our Team</h2>
-            <div className="team-grid">
-              {/* --- Using the reusable component --- */}
-              {teamData.map(member => (
-                <TeamMember
-                  key={member.name} // React needs a unique key for list items
-                  imgSrc={member.imgSrc}
-                  name={member.name}
-                  title={member.title}
-                />
-              ))}
+            <div className="team-section">
+              <h2 className="animate__animated animate__fadeInUp" style={{ animationDelay: '0.3s' }}>Our Team</h2>
+              <div className="team-grid">
+                {/* --- Using the reusable component --- */}
+                {teamData.map((member, index) => (
+                  <div key={member.name} className="animate__animated animate__fadeInUp" style={{ animationDelay: `${0.4 + (index * 0.1)}s` }}>
+                    <TeamMember
+                      imgSrc={member.imgSrc}
+                      name={member.name}
+                      title={member.title}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="values-section">
-            <h2>Our Values</h2>
+            <h2 className="animate__animated animate__fadeInUp" style={{ animationDelay: '0.5s' }}>Our Values</h2>
             <div className="values-grid">
               {/* --- Using the reusable component --- */}
-              {valuesData.map(value => (
-                <ValueCard
-                  key={value.title}
-                  iconClass={value.iconClass}
-                  title={value.title}
-                  description={value.description}
-                />
+              {valuesData.map((value, index) => (
+                <div key={value.title} className="animate__animated animate__fadeInUp" style={{ animationDelay: `${0.6 + (index * 0.1)}s` }}>
+                  <ValueCard
+                    iconClass={value.iconClass}
+                    title={value.title}
+                    description={value.description}
+                  />
+                </div>
               ))}
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }
