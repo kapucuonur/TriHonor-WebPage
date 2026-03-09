@@ -35,20 +35,18 @@ function AboutPage() {
           </div>
 
           <div className="team-section">
-            <div className="team-section">
-              <h2 className="animate__animated animate__fadeInUp" style={{ animationDelay: '0.3s' }}>Our Team</h2>
-              <div className="team-grid">
-                {/* --- Using the reusable component --- */}
-                {teamData.map((member, index) => (
-                  <div key={member.name} className="animate__animated animate__fadeInUp" style={{ animationDelay: `${0.4 + (index * 0.1)}s` }}>
-                    <TeamMember
-                      imgSrc={member.imgSrc}
-                      name={member.name}
-                      title={member.title}
-                    />
-                  </div>
-                ))}
-              </div>
+            <h2 className="animate__animated animate__fadeInUp" style={{ animationDelay: '0.3s' }}>Our Team</h2>
+            <div className="team-grid">
+              {/* --- Using the reusable component --- */}
+              {teamData.map((member, index) => (
+                <div key={member.name} className="animate__animated animate__fadeInUp" style={{ animationDelay: `${0.4 + (index * 0.1)}s` }}>
+                  <TeamMember
+                    imgSrc={member.imgSrc}
+                    name={member.name}
+                    title={member.title}
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
@@ -68,6 +66,7 @@ function AboutPage() {
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 }
