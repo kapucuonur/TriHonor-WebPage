@@ -29,8 +29,8 @@ function AboutPage() {
         <div className="about-content">
           <div className="about-story animate__animated animate__fadeInUp" style={{ animationDelay: '0.2s' }}>
             <h2>Our Story</h2>
-            <p>Founded in 2022, TriHonor began as an IT service with a vision to create exceptional digital experiences. What started as a solo endeavor by Onur Kapucu has grown into a comprehensive development agency delivering intuitive web, software, and AI solutions.</p>
-            <p>With a background spanning both sports coaching and software engineering, Onur brings a unique perspective to problem-solving. He leverages his discipline and analytical mindset to build high-performance applications tailored to clients' needs, from fitness tech integrations to full-fledged business dashboards.</p>
+            <p>Founded in 2022, TriHonor began as an IT service with a vision to create exceptional digital experiences. What started as a solo endeavor by Onur Kapucu has grown into a comprehensive development agency delivering intuitive <strong>Fullstack Web & Software Development, AI Integration, Mobile Solutions, Cloud Infrastructure, Cybersecurity, and specialized Garmin CIQ apps</strong>.</p>
+            <p>At the core of TriHonor is the discipline forged through endurance sports. As an active <strong>Triathlete and Ironman competitor</strong>, as well as a certified <strong>Triathlon Coach and Educator</strong>, Onur brings a unique perspective to problem-solving. This background in elite athletic performance translates directly into building high-performance, robust applications—from cutting-edge fitness tech integrations to complex, full-fledged business dashboards.</p>
             <p>Our name represents the three core values we honor in every project: Technical Excellence, Reliable Partnerships, and Innovative Solutions.</p>
           </div>
 
