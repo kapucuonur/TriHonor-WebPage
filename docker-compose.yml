@@ -13,3 +13,22 @@ services:
       - ./server/.env
     environment:
       - NODE_ENV=production
+    networks:
+      - trihonor-network
+
+  trihonor-frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: trihonor-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - trihonor-backend
+    networks:
+      - trihonor-network
+
+networks:
+  trihonor-network:
+    driver: bridge

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Backend sunucunuzun adresini burada merkezi olarak tanımlayın.
 // Geliştirme sırasında genellikle bu şekildedir.
-const API_BASE_URL = import.meta.env.PROD ? 'http://192.168.1.116:5000/api' : (import.meta.env.VITE_API_URL || 'http://localhost:5000/api');
+const API_BASE_URL = import.meta.env.PROD ? '/api' : (import.meta.env.VITE_API_URL || 'http://localhost:5000/api');
 
 // Axios için bir "instance" oluşturarak temel ayarları yapabiliriz.
 const apiClient = axios.create({
