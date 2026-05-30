@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  trihonor-backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: trihonor-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./server/.env
+    environment:
+      - NODE_ENV=production
