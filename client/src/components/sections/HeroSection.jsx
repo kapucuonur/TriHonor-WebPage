@@ -3,7 +3,10 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import './HeroSection.css'; // Import styles
-import heroBg from '../../assets/hero-bg.png';
+import watchtomacMockup from '../../assets/watchtomac-mockup.png';
+import coachonuraiVideo from '../../assets/coachonurai-video.mov';
+import bikefitMockup from '../../assets/bikefit-mockup.png';
+import icebathMockup from '../../assets/icebath-mockup.png';
 
 // Import GSAP and its ScrollTrigger plugin
 import { gsap } from 'gsap';
@@ -67,8 +70,38 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="hero-image-container" ref={imageRef}>
-          <img src={heroBg} alt="Abstract Glass Waves" loading="eager" decoding="sync" />
+        <div className="hero-portfolio-grid" ref={imageRef}>
+          <div className="portfolio-item watchtomac">
+            <img src={watchtomacMockup} alt="WatchToMac Desktop Client" loading="eager" />
+            <div className="portfolio-overlay">
+              <span className="portfolio-label">WatchToMac</span>
+            </div>
+          </div>
+          <div className="portfolio-item coachonurai">
+            <video 
+              src={coachonuraiVideo} 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+            <div className="portfolio-overlay">
+              <span className="portfolio-label">CoachOnurAI</span>
+            </div>
+          </div>
+          <div className="portfolio-item bikefit">
+            <img src={bikefitMockup} alt="BikeFit AI Analysis" loading="eager" />
+            <div className="portfolio-overlay">
+              <span className="portfolio-label">BikeFit AI</span>
+            </div>
+          </div>
+          <div className="portfolio-item icebath">
+            <img src={icebathMockup} alt="IceBath Tracker" loading="eager" />
+            <div className="portfolio-overlay">
+              <span className="portfolio-label">IceBath Tracker</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

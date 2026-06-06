@@ -8,7 +8,7 @@ services:
     container_name: trihonor-api-prod
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "5055:5000"
     env_file:
       - .env.prod
     environment:
@@ -32,8 +32,8 @@ services:
       POSTGRES_USER: trihonor_admin
       POSTGRES_PASSWORD: trihonor_secure_pass_2026
       POSTGRES_DB: trihonor_db
-    ports:
-      - "5432:5432" # Sadece Pi içinden veya VPN ile erişmek içindir.
+    # Port mapping is removed to prevent conflicts with other Postgres instances on Pi 5.
+    # The API can still reach the database via internal Docker network (postgres-db:5432).
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
