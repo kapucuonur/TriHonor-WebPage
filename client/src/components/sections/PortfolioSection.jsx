@@ -1,6 +1,8 @@
 import React from 'react';
 import './PortfolioSection.css';
 
+
+
 const projects = [
     {
         title: 'FinTech Dashboard',
@@ -25,6 +27,12 @@ const projects = [
         category: 'Machine Learning',
         description: 'Computer vision system for automated quality control.',
         image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1600&q=80'
+    },
+    {
+        title: 'Pi 5 Micro-Cloud',
+        category: 'Hardware & API Server',
+        description: 'Self-hosted Raspberry Pi 5 infrastructure running Dockerized APIs, PostgreSQL databases, and secure Cloudflare Tunnels.',
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80'
     }
 ];
 
