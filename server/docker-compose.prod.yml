@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  trihonor-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trihonor-api-prod
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env.prod
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - backend-network
+
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: trihonor-db-prod
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: trihonor_admin
+      POSTGRES_PASSWORD: trihonor_secure_pass_2026
+      POSTGRES_DB: trihonor_db
+    ports:
+      - "5432:5432" # Sadece Pi içinden veya VPN ile erişmek içindir.
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trihonor_admin -d trihonor_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

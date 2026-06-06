@@ -22,26 +22,26 @@ function HeroSection() {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // Create a timeline for entrance animation
+      // Create a timeline for entrance animation — keep it snappy
       const timeline = gsap.timeline({
-        defaults: { ease: 'power3.out', duration: 1 }
+        defaults: { ease: 'power2.out', duration: 0.5 }
       });
 
       // Add entrance animations
       timeline
-        .from(titleRef.current, { opacity: 0, y: 50 })
-        .from(paragraphRef.current, { opacity: 0, y: 30 }, '-=0.5')
-        .from(buttonsRef.current, { opacity: 0, y: 20 }, '-=0.5')
-        .from(imageRef.current, { opacity: 0, scale: 0.95, y: 40 }, '-=0.7');
+        .from(titleRef.current, { opacity: 0, y: 28 })
+        .from(paragraphRef.current, { opacity: 0, y: 18 }, '-=0.3')
+        .from(buttonsRef.current, { opacity: 0, y: 12 }, '-=0.3')
+        .from(imageRef.current, { opacity: 0, scale: 0.97, y: 24 }, '-=0.4');
 
       // Image is now stable - continuous floating / rolling effect removed to fix scroll performance bugs
 
 
-      // Subtle background movement effect - now targeting a real div
+      // Subtle background glow drift — slow for performance
       gsap.to(glowRef.current, {
-        x: '+=20',
-        y: '+=20',
-        duration: 20,
+        x: '+=15',
+        y: '+=15',
+        duration: 30,
         ease: 'none',
         repeat: -1,
         yoyo: true
@@ -68,7 +68,7 @@ function HeroSection() {
         </div>
 
         <div className="hero-image-container" ref={imageRef}>
-          <img src={heroBg} alt="Abstract Glass Waves" />
+          <img src={heroBg} alt="Abstract Glass Waves" loading="eager" decoding="sync" />
         </div>
       </div>
     </section>

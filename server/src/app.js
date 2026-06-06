@@ -20,7 +20,8 @@ const allowedOrigins = [
   'http://localhost:5173',
   'https://trihonor.com',
   'https://www.trihonor.com',
-  'https://trihonor-web-page.vercel.app'
+  'https://trihonor-web-page.vercel.app',
+  ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [])
 ];
 
 // BULLETPROOF CORS & PREFLIGHT HANDLING

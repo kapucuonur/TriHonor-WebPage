@@ -14,8 +14,9 @@ yarn-error.log*
 
 # Ortam değişkenleri
 .env
-server/.env
-client/.env
+.env*
+server/.env*
+client/.env*
 
 # Local History & IDE specific
 .history/

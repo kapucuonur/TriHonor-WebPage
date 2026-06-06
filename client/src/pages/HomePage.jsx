@@ -26,16 +26,16 @@ function HomePage() {
         if (!section) return;
 
         gsap.fromTo(section,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 24 },
           {
             opacity: 1,
             y: 0,
-            duration: 1,
-            ease: 'power3.out',
+            duration: 0.55,
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: section,
-              start: 'top 85%', // Starts animation when top of section hits 85% of viewport height
-              once: true // Play only once to prevent layout thrashing and scroll lag
+              start: 'top 88%',
+              once: true
             }
           }
         );
@@ -45,7 +45,7 @@ function HomePage() {
     return () => ctx.revert();
   }, []);
 
-  // Helper to add sections to ref array
+  // Helper to add non-hero sections to ref array (hero is above fold, no scroll trigger)
   const addToRefs = (el) => {
     if (el && !sectionsRef.current.includes(el)) {
       sectionsRef.current.push(el);
@@ -54,7 +54,8 @@ function HomePage() {
 
   return (
     <div ref={containerRef} className="homepage-wrapper">
-      <div ref={addToRefs} className="home-section hero-wrapper">
+      {/* Hero is NOT in scroll trigger — it's above the fold, show immediately */}
+      <div className="home-section hero-wrapper">
         <HeroSection />
       </div>
       <div ref={addToRefs} className="home-section services-wrapper">

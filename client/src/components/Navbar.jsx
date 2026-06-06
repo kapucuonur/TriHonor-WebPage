@@ -9,12 +9,21 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    const next = !isMenuOpen;
+    setIsMenuOpen(next);
+    // Lock body scroll when menu is open
+    document.body.style.overflow = next ? 'hidden' : '';
   };
 
   const closeMobileMenu = () => {
     setIsMenuOpen(false);
+    document.body.style.overflow = '';
   };
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => { document.body.style.overflow = ''; };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
