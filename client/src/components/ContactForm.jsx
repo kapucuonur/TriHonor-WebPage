@@ -30,7 +30,7 @@ const ContactForm = () => {
 
     try {
       // Assuming the API is available at this endpoint based on server/src/app.js
-      await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post(`${import.meta.env.PROD ? 'https://api.trihonor.com/api' : (import.meta.env.VITE_API_URL || 'http://localhost:5000/api')}/contact`, formData);
       
       setStatus({
         submitting: false,
