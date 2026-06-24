@@ -26,6 +26,11 @@ const servicesData = [
     image: aiIntegrationImg
   },
   {
+    icon: 'fas fa-robot',
+    title: 'SRE-DAEMON',
+    desc: 'AI-powered self-healing SRE daemon for auto-remediation, real-time monitoring, and proactive system resilience.',
+  },
+  {
     icon: 'fas fa-mobile-alt',
     title: 'Apps & Wearable Tech',
     desc: 'Custom mobile applications and wearable solutions. From iOS/Android to specialized fitness tech integrations.',
