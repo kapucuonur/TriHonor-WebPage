@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/sre/:path*",
+      "destination": "https://sre-api.trihonor.com/sre/:path*"
+    }
+  ]
+}
