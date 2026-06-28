@@ -1,8 +1,14 @@
 {
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
   "rewrites": [
     {
       "source": "/sre/:path*",
       "destination": "https://sre-api.trihonor.com/sre/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

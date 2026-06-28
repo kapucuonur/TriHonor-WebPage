@@ -8,6 +8,7 @@ const servicesData = [
   { icon: 'fas fa-code', title: 'Fullstack Web Development', desc: 'From concept to launch, we craft end-to-end web solutions that blend stunning front-end design with robust, high-performance back-end engineering.' },
   { icon: 'fas fa-laptop-code', title: 'Software Development', desc: 'Go beyond off-the-shelf products with bespoke software, precisely engineered to fit your unique workflows and solve your most complex business challenges.' },
   { icon: 'fas fa-brain', title: 'AI Integration', desc: 'Unlock the transformative power of AI. We integrate intelligent automation and predictive analytics to uncover critical insights and give you a decisive competitive edge.' },
+  { icon: 'fas fa-robot', title: 'SRE-DAEMON', desc: 'AI-powered self-healing SRE daemon for auto-remediation, real-time monitoring, and proactive system resilience.' },
   { icon: 'fas fa-mobile-alt', title: 'Mobile Solutions', desc: 'Native and cross-platform mobile applications that provide seamless user experiences on iOS and Android devices.' },
   { icon: 'fas fa-cloud', title: 'Cloud Infrastructure', desc: 'Scalable, secure, and cost-effective cloud architectures deployed on AWS, Azure, or Google Cloud Platform.' },
   { icon: 'fas fa-shield-alt', title: 'Cybersecurity', desc: 'Protect your digital assets with our comprehensive security audits, penetration testing, and secure coding practices.' },
