@@ -1,6 +1,7 @@
 // client/src/pages/PortfolioPage.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PortfolioCard from '../components/PortfolioCard';
 import portfolioAiImg from '../assets/portfolio-ai.png';
 import wearableTechImg from '../assets/images/wearable-tech.png';
@@ -35,6 +36,10 @@ function PortfolioPage() {
 
   return (
     <section className="portfolio-page">
+      <SEO 
+        title="Our Portfolio" 
+        description="Explore our recent projects, success stories, e-commerce platforms, SaaS applications, custom AI chat assistants, and Garmin Connect IQ watch faces." 
+      />
       <div className="portfolio-container">
         <h1 className="page-title">Our Portfolio</h1>
         <p className="page-subtitle">Explore our recent projects and success stories</p>

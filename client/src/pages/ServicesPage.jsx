@@ -1,6 +1,7 @@
 // client/src/pages/ServicesPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './ServicesPage.css';
 
 // --- Data Layer ---
@@ -27,6 +28,10 @@ const processStepsData = [
 function ServicesPage() {
   return (
     <section className="services-page">
+      <SEO 
+        title="Our Services" 
+        description="Comprehensive digital solutions tailored to your business needs including Fullstack Web Development, Software Engineering, AI Integration, and SRE-DAEMON." 
+      />
       <div className="services-container">
         <h1 className="page-title animate__animated animate__fadeInDown">Our Services</h1>
         <p className="page-subtitle animate__animated animate__fadeInUp">Comprehensive digital solutions tailored to your business needs.</p>

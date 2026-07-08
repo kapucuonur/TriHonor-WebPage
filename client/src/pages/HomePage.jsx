@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Import all the section components
+import SEO from '../components/SEO';
 import HeroSection from '../components/sections/HeroSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import ExpertiseSection from '../components/sections/ExpertiseSection';
@@ -54,6 +55,10 @@ function HomePage() {
 
   return (
     <div ref={containerRef} className="homepage-wrapper">
+      <SEO 
+        title="Fullstack Web/Software & AI Development" 
+        description="Professional fullstack web, software and AI development services. We build cutting-edge solutions to grow your business." 
+      />
       {/* Hero is NOT in scroll trigger — it's above the fold, show immediately */}
       <div className="home-section hero-wrapper">
         <HeroSection />

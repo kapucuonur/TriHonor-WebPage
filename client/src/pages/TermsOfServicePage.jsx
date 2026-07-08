@@ -1,10 +1,15 @@
 // client/src/pages/TermsOfServicePage.jsx
 import React from 'react';
+import SEO from '../components/SEO';
 import './LegalPages.css';
 
 const TermsOfServicePage = () => {
     return (
         <div className="legal-page">
+            <SEO 
+              title="Terms of Service" 
+              description="Terms of Service for TriHonor. Read our terms, conditions, user responsibilities, intellectual property policies, and liability limitations." 
+            />
             <div className="legal-container">
                 <h1>Terms of Service</h1>
                 <p className="last-updated">Last Updated: March 6, 2026</p>

@@ -1,5 +1,6 @@
 // client/src/pages/ContactPage.jsx
 import React from 'react';
+import SEO from '../components/SEO';
 import InfoCard from '../components/InfoCard';
 import ContactForm from '../components/ContactForm'; // Reusing our existing component!
 import './ContactPage.css';
@@ -17,6 +18,10 @@ const contactDetails = [
 function ContactPage() {
   return (
     <section className="contact-page">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with TriHonor to discuss your next fullstack web development, bespoke software, or AI integration project." 
+      />
       <div className="container">
         <div className="contact-header">
           <h1 className="page-title">Contact Us</h1>

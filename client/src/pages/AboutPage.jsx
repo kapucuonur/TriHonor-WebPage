@@ -1,5 +1,6 @@
 // client/src/pages/AboutPage.jsx
 import React from 'react';
+import SEO from '../components/SEO';
 import TeamMember from '../components/TeamMember'; // Import the new component
 import ValueCard from '../components/ValueCard';   // Import the new component
 import './AboutPage.css'; // We will create this CSS file next
@@ -20,6 +21,10 @@ const valuesData = [
 function AboutPage() {
   return (
     <section className="about-page">
+      <SEO 
+        title="About Us" 
+        description="Learn about TriHonor, our story, team, and values. Founded by Onur Kapucu, fullstack developer and triathlete, we deliver high-performance software engineering and AI solutions." 
+      />
       <div className="container">
         <div className="about-header">
           <h1 className="page-title animate__animated animate__fadeInDown">About TriHonor</h1>

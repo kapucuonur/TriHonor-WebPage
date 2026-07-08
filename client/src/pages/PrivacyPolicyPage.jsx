@@ -1,10 +1,15 @@
 // client/src/pages/PrivacyPolicyPage.jsx
 import React from 'react';
+import SEO from '../components/SEO';
 import './LegalPages.css';
 
 const PrivacyPolicyPage = () => {
     return (
         <div className="legal-page">
+            <SEO 
+              title="Privacy Policy" 
+              description="Privacy Policy for TriHonor. Learn how we collect, use, protect, and handle your personal identification information." 
+            />
             <div className="legal-container">
                 <h1>Privacy Policy</h1>
                 <p className="last-updated">Last Updated: March 6, 2026</p>
